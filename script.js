@@ -26,6 +26,31 @@
     });
   });
 
+  /* Contact form hands the message over to the visitor's mail app */
+  var cform = document.getElementById('cform');
+  if (cform) {
+    cform.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var from = cform.querySelector('#cf-email').value.trim();
+      var msg = cform.querySelector('#cf-message').value.trim();
+      if (!from || !msg) return;
+
+      var body = msg + '\n\n\u2014\nReply to: ' + from;
+      window.location.href = 'mailto:contact@paulkeilhau.com'
+        + '?subject=' + encodeURIComponent('Via paulkeilhau.com')
+        + '&body=' + encodeURIComponent(body);
+
+      var done = cform.querySelector('.cform__done');
+      if (!done) {
+        done = document.createElement('p');
+        done.className = 'cform__done';
+        done.setAttribute('role', 'status');
+        cform.appendChild(done);
+      }
+      done.textContent = 'Your mail app should be opening. If nothing happens, write to contact@paulkeilhau.com directly.';
+    });
+  }
+
   /* Top bar gets a background once you leave the hero */
   var bar = document.getElementById('bar');
   var hero = document.querySelector('.hero');

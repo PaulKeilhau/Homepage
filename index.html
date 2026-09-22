@@ -53,7 +53,6 @@
   <section class="section" id="work">
     <div class="section__head">
       <h2>Selected Work</h2>
-      <p>Theatre, film, games and the stage — ten projects between 2019 and 2026.</p>
     </div>
 
     <article class="work">
@@ -72,10 +71,10 @@
       <div class="work__body">
         <p>A dance exploration of the woman living in the shadow of the famous Orpheus. Choreographer Gabriel Pitoni tells the story of Eurydice's journey from a life in the shadows towards her own, free identity.</p>
         <dl class="credits">
-          <div><dt>Premiere</dt><dd>20 September 2026</dd></div>
           <div><dt>Choreography</dt><dd>Gabriel Pitoni</dd></div>
           <div><dt>Musical direction</dt><dd>Michael Ellis Ingram</dd></div>
           <div><dt>Electronic composition &amp; sound design</dt><dd>Paul Keilhau</dd></div>
+          <div class="credits__date"><dt>Premiere</dt><dd>20 September 2026</dd></div>
         </dl>
       </div>
     </article>
@@ -96,9 +95,9 @@
       <div class="work__body">
         <p>No matter how strong the desire is to fit in and not stand out — at some point conformity breaks and personalities come to the fore.</p>
         <dl class="credits">
-          <div><dt>Premiere</dt><dd>4 November 2024</dd></div>
           <div><dt>Choreography</dt><dd>Gabriel Pitoni</dd></div>
-          <div><dt>Electronic music composition</dt><dd>Paul Keilhau</dd></div>
+          <div><dt>Electronic music</dt><dd>Paul Keilhau</dd></div>
+          <div class="credits__date"><dt>Premiere</dt><dd>4 November 2024</dd></div>
         </dl>
       </div>
     </article>
@@ -143,6 +142,7 @@
         <p>A medieval multiplayer game developed by Triternion. Since its first public release in 2019 it has sold more than a million copies.</p>
         <dl class="credits">
           <div><dt>Soundtrack</dt><dd>Paul Keilhau, Lukas Gorris &amp; Viktor Alexander</dd></div>
+          <div class="credits__date"><dt>Release</dt><dd>June 2019 &amp; September 2021</dd></div>
         </dl>
       </div>
     </article>
@@ -185,6 +185,7 @@
         <p>Live performance with my current project Skew Krew. Berlin's night-time mood — never empty, always empty.</p>
         <dl class="credits">
           <div><dt>Music</dt><dd>Paul Keilhau &amp; Raphael Sturm</dd></div>
+          <div class="credits__date"><dt>Release</dt><dd>January 2026</dd></div>
         </dl>
       </div>
     </article>
@@ -281,8 +282,9 @@
     <div class="about">
       <div class="about__text">
         <p class="lead">I'm a Berlin-based composer, artist and audio engineer working between contemporary dance, film, games and electronic music.</p>
-        <p>After studying Keys &amp; Music Production in Münster, I moved to Berlin in 2018 to fully pursue my career in music. My work spans composition, sound design and electronic music — most recently <em>Ich, Eurydike</em> at Staatsoperette Dresden, the video game <em>Mordhau</em>, and the VR film <em>Strands of Mind</em>.</p>
-        <p>Alongside that I produce for other artists as part of Skydojo Studios, play piano regularly in Berlin, and teach — privately, at music schools and in workshops. Passing music on matters as much to me as writing it.</p>
+        <p>Writing for contemporary ballet is where I want to go furthest. <em>Ich, Eurydike</em> at Staatsoperette Dresden and <em>Next to Me</em> in Regensburg, both with choreographer Gabriel Pitoni, are the work that has given me most — a room full of bodies, and music that has to move with them.</p>
+        <p>With Skew Krew I play live: drums, keys and samples locking into each other in real time, somewhere between hypnotic techno and UK bass — a set that can turn into a studio session and back. Our EP <em>SADKOWO</em> lands on 6 March 2026, with shows at Arkaoda, Paloma and Traumburg Festival.</p>
+        <p>After studying Keys &amp; Music Production in Münster I moved to Berlin in 2018. Alongside my own work I produce for other artists as part of Skydojo Studios, play piano regularly in the city, and teach privately and in workshops.</p>
       </div>
       <figure class="about__figure">
         <img src="assets/mordhau_ost.jpg" alt="Cover artwork of the Mordhau original soundtrack" width="1400" height="1400" loading="lazy">
@@ -294,10 +296,23 @@
   <section class="section section--contact" id="contact">
     <div class="section__head">
       <h2>Contact</h2>
-      <p>For scores, sound design, live performance and teaching.</p>
     </div>
     <div class="contact">
-      <a class="contact__mail" href="mailto:contact@paulkeilhau.com">contact@paulkeilhau.com</a>
+      <form class="cform" id="cform" action="mailto:contact@paulkeilhau.com" method="post" enctype="text/plain">
+        <p class="cform__row">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email">
+        </p>
+        <p class="cform__row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </p>
+        <p class="cform__foot">
+          <button type="submit">Send</button>
+          <span class="cform__hint">Opens in your mail app</span>
+        </p>
+      </form>
+      <p class="contact__or">or write to <a class="contact__mail" href="mailto:contact@paulkeilhau.com">contact@paulkeilhau.com</a></p>
       <dl class="contact__meta">
         <div><dt>Based in</dt><dd>Berlin 10999</dd></div>
         <div><dt>Label</dt><dd><a href="http://resonanzfeld.com/" target="_blank" rel="noopener">Resonanzfeld</a></dd></div>
