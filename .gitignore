@@ -1,3 +1,9 @@
 .DS_Store
-*.pages
 node_modules/
+
+# Camera masters and edit exports live here but stay out of git —
+# the web-sized versions in video/ are what the site serves.
+assets/*.mov
+assets/*.MOV
+assets/*.mp4
+assets/Paul_Studio_Bio.JPG

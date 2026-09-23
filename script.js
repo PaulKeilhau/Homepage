@@ -12,17 +12,30 @@
     btn.addEventListener('click', function () {
       var wrap = document.createElement('div');
       wrap.className = 'embed';
+      var player;
 
-      var frame = document.createElement('iframe');
-      frame.src = btn.dataset.video;
-      frame.title = btn.dataset.title || 'Video';
-      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      frame.allowFullscreen = true;
-      frame.loading = 'lazy';
+      if (btn.dataset.file) {
+        /* Video that lives in this repo — no third party involved */
+        player = document.createElement('video');
+        player.src = btn.dataset.file;
+        player.poster = btn.querySelector('img').getAttribute('src');
+        player.controls = true;
+        player.autoplay = true;
+        player.playsInline = true;
+        player.preload = 'auto';
+        player.setAttribute('aria-label', btn.dataset.title || 'Video');
+      } else {
+        player = document.createElement('iframe');
+        player.src = btn.dataset.video;
+        player.title = btn.dataset.title || 'Video';
+        player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        player.allowFullscreen = true;
+        player.loading = 'lazy';
+      }
 
-      wrap.appendChild(frame);
+      wrap.appendChild(player);
       btn.replaceWith(wrap);
-      frame.focus();
+      player.focus();
     });
   });
 
