@@ -12,7 +12,8 @@ no package manager. Edit the files and reload the browser.
 | `index.html` | The whole site — one page, sections for work, listening, about and contact |
 | `styles.css` | All styling. Colours and spacing live in the `:root` block at the top |
 | `script.js` | Footer year, sticky bar, fade-ins, and the click-to-load video players |
-| `assets/` | Portrait, cover art, video thumbnails |
+| `assets/` | Photographs and video thumbnails. The `.mov` masters sitting here are ignored by git |
+| `video/` | Web-sized MP4s the site serves itself |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 
 ## Working on it locally
@@ -40,11 +41,22 @@ A project without a video uses `class="work work--nomedia"` and simply leaves th
 
 ## Videos
 
-Nothing is loaded from YouTube or Vimeo until a visitor clicks play. That keeps
-the page fast and means no third-party cookies are set on arrival.
+Nothing loads until a visitor clicks play — neither the YouTube and Vimeo
+embeds nor the files in `video/`. That keeps the page fast and means no
+third-party cookies are set on arrival.
 
-Still missing a video: **Carn**, **Cottage Connection**, **Jungle Chase**. Those
-three lived as uploads on the old Squarespace site.
+Most trailers are embedded from YouTube or Vimeo. **Carn** is served from this
+repo instead, as a `<video>` element with a poster frame.
+
+To add another self-hosted video, re-encode the master first — camera exports
+run to hundreds of megabytes and GitHub refuses any file over 100 MB:
+
+```
+avconvert --source master.mov --output web.mp4 --preset Preset1280x720
+```
+
+That preset errs towards quality. For anything longer than a minute you will
+want a lower bitrate than it gives you.
 
 ## Publishing
 

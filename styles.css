@@ -361,6 +361,9 @@ a { color: inherit; }
 
 .work--nomedia .work__head { margin-bottom: clamp(1.25rem, 3vw, 2rem); }
 
+/* Work continues after the Listen section — no second heading needed */
+.section--work-continued { padding-top: 0; }
+
 /* ---------- video facade ---------- */
 
 .facade {
@@ -486,7 +489,9 @@ a { color: inherit; }
 .about__text p:not(.lead) { color: #c9c6c1; }
 
 .about__figure { margin: 0; }
-.about__figure img { filter: grayscale(0.4) brightness(0.88) contrast(1.04); }
+/* Matched to the hero portrait: the studio light is far pinker, so it
+   needs a heavier hand to arrive at the same muted grey. */
+.about__figure img { filter: grayscale(0.78) brightness(0.8) contrast(1.06); }
 .about__figure figcaption {
   margin-top: 0.9rem;
   font-size: 0.6875rem;
