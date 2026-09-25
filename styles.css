@@ -320,6 +320,28 @@ a { color: inherit; }
 
 .work__media { margin-bottom: clamp(1.75rem, 4vw, 3rem); }
 
+/* Shot upright — a tall frame rather than black bars in a wide one */
+.work__media--portrait .facade,
+.work__media--portrait .embed { aspect-ratio: 9 / 16; max-width: 23rem; }
+.work__media--portrait .facade__play {
+  width: clamp(3rem, 6vw, 4rem);
+  height: clamp(3rem, 6vw, 4rem);
+}
+
+/* An upright frame leaves half the row empty — so the writing moves in beside it */
+@media (min-width: 900px) {
+  .work--portrait {
+    display: grid;
+    grid-template-columns: 23rem minmax(0, 1fr);
+    column-gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+  .work--portrait .work__head { grid-column: 1 / -1; }
+  .work--portrait .work__media { margin-bottom: 0; }
+  .work--portrait .work__body { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .work--portrait .work__body > p { max-width: 34ch; }
+}
+
 .work__body {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
@@ -489,10 +511,14 @@ a { color: inherit; }
 }
 .about__text p:not(.lead) { color: #c9c6c1; }
 
+.about__media { display: grid; gap: clamp(1rem, 2.5vw, 1.5rem); }
 .about__figure { margin: 0; }
 /* Matched to the hero portrait: the studio light is far pinker, so it
    needs a heavier hand to arrive at the same muted grey. */
 .about__figure img { filter: grayscale(0.55) brightness(0.92) contrast(1.03); }
+/* Stage light — redder still, so it needs more grey again to sit
+   quietly beside the studio photograph instead of shouting past it. */
+.about__figure--live img { filter: grayscale(0.86) brightness(0.9) contrast(1.02) saturate(0.85); }
 .about__figure figcaption {
   margin-top: 0.9rem;
   font-size: 0.6875rem;
