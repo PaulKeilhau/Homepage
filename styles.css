@@ -323,11 +323,11 @@ a { color: inherit; }
 /* Shot upright — a tall frame rather than black bars in a wide one,
    centred, with the black to either side left as it is */
 .work__media--portrait { display: flex; justify-content: center; }
-.work__media--portrait .facade { aspect-ratio: 785 / 1100; }
+.work__media--portrait .facade { aspect-ratio: 9 / 16; }
 .work__media--portrait .embed { aspect-ratio: 9 / 16; }
 .work__media--portrait .facade,
 .work__media--portrait .embed { width: 100%; max-width: 24rem; }
-.work__media--portrait .facade img { object-fit: contain; }
+
 .work__media--portrait .facade__play {
   width: clamp(3rem, 6vw, 4rem);
   height: clamp(3rem, 6vw, 4rem);
@@ -508,10 +508,10 @@ a { color: inherit; }
 .about__figure { margin: 0; }
 /* Matched to the hero portrait: the studio light is far pinker, so it
    needs a heavier hand to arrive at the same muted grey. */
-.about__figure img { filter: grayscale(0.55) brightness(0.92) contrast(1.03); }
+.about__figure img { filter: grayscale(0.25) brightness(0.95) contrast(1.02); }
 /* Stage light — redder still, so it needs more grey again to sit
    quietly beside the studio photograph instead of shouting past it. */
-.about__figure--live img { filter: grayscale(0.15) brightness(1.02) contrast(1.02); }
+.about__figure--live img { filter: grayscale(0.35) brightness(0.96) contrast(1.02); }
 .about__figure figcaption {
   margin-top: 0.9rem;
   font-size: 0.6875rem;
@@ -753,29 +753,6 @@ a { color: inherit; }
 .listen__links a:hover { color: var(--tone); }
 .contact__meta a:hover { color: var(--tone); border-bottom-color: var(--tone); }
 .contact__mail:hover { color: var(--tone); border-bottom-color: var(--tone); }
-
-/* artwork rather than a film still: shown as it is, which means the
-   play button has to go dark to be seen on pale paper */
-.work__media--portrait .facade img { filter: none; }
-.work__media--portrait .facade:hover img,
-.work__media--portrait .facade:focus-visible img { filter: none; transform: none; }
-.work__media--portrait .facade__play {
-  background: rgba(11, 11, 12, 0.62);
-  border-color: rgba(11, 11, 12, 0.3);
-}
-.work__media--portrait .facade__label {
-  color: #0b0b0c;
-  text-shadow: none;
-}
-.work__media--portrait .facade:hover .facade__play,
-.work__media--portrait .facade:focus-visible .facade__play {
-  background: #0b0b0c;
-  border-color: #0b0b0c;
-}
-.work__media--portrait .facade:hover .facade__play::after,
-.work__media--portrait .facade:focus-visible .facade__play::after {
-  border-left-color: var(--fg);
-}
 
 /* brand marks in front of the listening links */
 .listen__name { display: inline-flex; align-items: center; gap: 0.7rem; }
