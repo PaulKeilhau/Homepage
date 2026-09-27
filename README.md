@@ -45,8 +45,10 @@ Nothing loads until a visitor clicks play — neither the YouTube and Vimeo
 embeds nor the files in `video/`. That keeps the page fast and means no
 third-party cookies are set on arrival.
 
-Most trailers are embedded from YouTube or Vimeo. **Carn** is served from this
-repo instead, as a `<video>` element with a poster frame.
+Most trailers are embedded from YouTube or Vimeo. **Carn** and **Cottage
+Connection** are served from this repo instead, as `<video>` elements with a
+poster frame. Self-hosting costs quality — GitHub serves one fixed file, where
+YouTube adapts to the connection — so prefer an embed when the footage matters.
 
 To add another self-hosted video, re-encode the master first — camera exports
 run to hundreds of megabytes and GitHub refuses any file over 100 MB:
