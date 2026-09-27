@@ -18,15 +18,20 @@ no package manager. Edit the files and reload the browser.
 
 ## Working on it locally
 
-Open `index.html` in a browser. That's it.
+Open `index.html` in a browser — fine for layout, text and images.
 
-For a local server (needed only if you add something that fetches files):
+**The YouTube and Vimeo videos will not play that way.** Opened from the Finder
+the page runs under `file://`, which gives it no real web address, and YouTube
+refuses to start a player it cannot place ("Error 153"). Nothing is wrong with
+the page or the videos; the same files play everywhere else.
+
+To see the videos locally, serve the folder over http:
 
 ```
 python3 -m http.server 8000
 ```
 
-Then visit http://localhost:8000
+Then visit http://localhost:8000, and stop the server with Ctrl-C.
 
 ## Adding a project
 
