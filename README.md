@@ -69,11 +69,10 @@ want a lower bitrate than it gives you.
 
 The site is served by GitHub Pages from the `main` branch.
 
-To move `paulkeilhau.com` here, add a file called `CNAME` containing just:
+It answers at **www.paulkeilhau.com**, which is what the `CNAME` file in the
+root sets. `paulkeilhau.com` without the www redirects there.
 
-```
-www.paulkeilhau.com
-```
-
-then point the DNS at GitHub Pages. Do that only once you are ready to leave
-Squarespace — the domain can only point at one of them at a time.
+The DNS lives at Namecheap: four A records on `@` pointing at GitHub Pages
+(185.199.108–111.153) and a CNAME on `www` pointing at `paulkeilhau.github.io`.
+The mail records — MX, SPF, and the DKIM key on `default._domainkey` — belong to
+Namecheap Private Email and have nothing to do with the site. Leave them alone.
